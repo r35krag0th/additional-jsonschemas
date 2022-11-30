@@ -1,0 +1,532 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/ArgoCDApplication",
+  "definitions": {
+    "ArgoCDApplication": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "apiVersion": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "spec": {
+          "$ref": "#/definitions/Spec"
+        }
+      },
+      "required": [
+        "apiVersion",
+        "kind",
+        "metadata",
+        "spec"
+      ],
+      "title": "ArgoCDApplication"
+    },
+    "Metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {}
+        },
+        "finalizers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "namespace"
+      ],
+      "title": "Metadata"
+    },
+    "Spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/definitions/Source"
+        },
+        "destination": {
+          "$ref": "#/definitions/Destination"
+        },
+        "syncPolicy": {
+          "$ref": "#/definitions/SyncPolicy"
+        },
+        "ignoreDifferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IgnoreDifference"
+          }
+        },
+        "revisionHistoryLimit": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "destination",
+        "project",
+        "source"
+      ],
+      "title": "Spec"
+    },
+    "Destination": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "server": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "namespace",
+            "server"
+          ]
+        },
+        {
+          "required": [
+            "namespace",
+            "name"
+          ]
+        }
+      ],
+      "title": "Destination"
+    },
+    "IgnoreDifference": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "group": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "jsonPointers": {
+          "type": "array",
+          "description": "A list of xpath expressions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jqPathExpressions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "managedFieldsManagers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "group",
+            "jsonPointers",
+            "kind"
+          ]
+        },
+        {
+          "required": [
+            "group",
+            "jqPathExpressions",
+            "kind"
+          ]
+        },
+        {
+          "required": [
+            "group",
+            "managedFieldsManagers",
+            "kind"
+          ]
+        }
+      ],
+      "title": "IgnoreDifference"
+    },
+    "Source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repoURL": {
+          "type": "string"
+        },
+        "targetRevision": {
+          "type": "string"
+        },
+        "chart": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "helm": {
+          "$ref": "#/definitions/Helm"
+        },
+        "kustomize": {
+          "$ref": "#/definitions/Kustomize"
+        },
+        "directory": {
+          "$ref": "#/definitions/Directory"
+        },
+        "plugin": {
+          "$ref": "#/definitions/Plugin"
+        }
+      },
+      "required": [
+        "repoURL",
+        "targetRevision"
+      ],
+      "title": "Source"
+    },
+    "Directory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "recurse": {
+          "type": "boolean"
+        },
+        "jsonnet": {
+          "$ref": "#/definitions/Jsonnet"
+        },
+        "exclude": {
+          "type": "string",
+          "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation.  To match multiple patterns wrap the patterns in {} and separate them with commas"
+        },
+        "include": {
+          "type": "string",
+          "description": "Include contains a glob patter to match paths agsinst that should be explicitly included during manifest generation.  If this field is set, only matching manifests will be included.  To match multiple patterns wrap the patterns in {} and separate them with commas."
+        }
+      },
+      "required": [
+        "jsonnet",
+        "recurse"
+      ],
+      "title": "Directory"
+    },
+    "Jsonnet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "extVars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EXTVar"
+          }
+        },
+        "tlas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EXTVar"
+          }
+        }
+      },
+      "required": [
+        "extVars",
+        "tlas"
+      ],
+      "title": "Jsonnet"
+    },
+    "EXTVar": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "code": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "title": "EXTVar"
+    },
+    "FileParameter": {
+      "type": "object",
+      "description": "contents of files used as parameters",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "path"
+      ]
+    },
+    "Helm": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "passCredentials": {
+          "type": "boolean"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Parameter"
+          }
+        },
+        "fileParameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileParameter"
+          }
+        },
+        "releaseName": {
+          "type": "string"
+        },
+        "valueFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "values": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "values"
+      ],
+      "title": "Helm"
+    },
+    "Parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "forceString": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "title": "Parameter"
+    },
+    "Kustomize": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "namePrefix": {
+          "type": "string"
+        },
+        "nameSuffix": {
+          "type": "string"
+        },
+        "commonLabels": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "commonAnnotations": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "images",
+        "namePrefix",
+        "version"
+      ],
+      "title": "Kustomize"
+    },
+    "Plugin": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "env": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Env"
+          }
+        }
+      },
+      "required": [
+        "env",
+        "name"
+      ],
+      "title": "Plugin"
+    },
+    "Env": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "title": "Env"
+    },
+    "SyncPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "automated": {
+          "$ref": "#/definitions/Automated"
+        },
+        "syncOptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retry": {
+          "$ref": "#/definitions/Retry"
+        }
+      },
+      "required": [
+        "syncOptions"
+      ],
+      "title": "SyncPolicy"
+    },
+    "Automated": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "prune": {
+          "type": "boolean"
+        },
+        "selfHeal": {
+          "type": "boolean"
+        },
+        "allowEmpty": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "allowEmpty",
+        "prune",
+        "selfHeal"
+      ],
+      "title": "Automated"
+    },
+    "Retry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "limit": {
+          "type": "integer"
+        },
+        "backoff": {
+          "$ref": "#/definitions/Backoff"
+        }
+      },
+      "required": [
+        "backoff",
+        "limit"
+      ],
+      "title": "Retry"
+    },
+    "Backoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "duration": {
+          "type": "string",
+          "description": "the amount to back off",
+          "examples": [
+            "5s",
+            "10m",
+            "6h"
+          ]
+        },
+        "factor": {
+          "type": "integer",
+          "description": "a factor to multiply the base duration after each failed retry"
+        },
+        "maxDuration": {
+          "type": "string",
+          "description": "the maximum amount of time allowed for the backoff strategy",
+          "examples": [
+            "5s",
+            "10m",
+            "6h"
+          ]
+        }
+      },
+      "required": [
+        "duration",
+        "factor",
+        "maxDuration"
+      ],
+      "title": "Backoff"
+    }
+  }
+}
