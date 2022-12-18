@@ -64,3 +64,6 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+schemas/kubernetes/kube_releases.txt
+schemas/kubernetes/kube_releases_sorted.txt
