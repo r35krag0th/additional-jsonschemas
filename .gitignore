@@ -67,3 +67,5 @@ node_modules/
 
 schemas/kubernetes/kube_releases.txt
 schemas/kubernetes/kube_releases_sorted.txt
+public/*.json
+public/kubernetes
