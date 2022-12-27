@@ -99,7 +99,7 @@ render_with_prefix() {
   #   --kubernetes \
   #   --prefix "${prefix}" \
   #   "${schema}"
-  render_schema "${1}" "" "--prefix \"$(prefix_for_major_minor $1)\""
+  render_schema "${1}" "" "--prefix $(prefix_for_major_minor $1)"
 }
 
 if ! command -v gh >/dev/null; then

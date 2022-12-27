@@ -34,11 +34,11 @@
       ]
     },
     "nonResourceAttributes": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.authorization.v1beta1.NonResourceAttributes",
+      "$ref": "_definitions.json#/definitions/io.k8s.api.authorization.v1beta1.NonResourceAttributes",
       "description": "NonResourceAttributes describes information for a non-resource access request"
     },
     "resourceAttributes": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.authorization.v1beta1.ResourceAttributes",
+      "$ref": "_definitions.json#/definitions/io.k8s.api.authorization.v1beta1.ResourceAttributes",
       "description": "ResourceAuthorizationAttributes describes information for a resource access request"
     },
     "uid": {
