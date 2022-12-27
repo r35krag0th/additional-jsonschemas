@@ -22,14 +22,14 @@
       ]
     },
     "metadata": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+      "$ref": "_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
     },
     "spec": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec",
+      "$ref": "_definitions.json#/definitions/io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec",
       "description": "The certificate request itself and any additional information."
     },
     "status": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus",
+      "$ref": "_definitions.json#/definitions/io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus",
       "description": "Derived information about the request."
     }
   },

@@ -17,7 +17,7 @@
       ]
     },
     "finishedAt": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "Time at which the container last terminated"
     },
     "message": {
@@ -43,7 +43,7 @@
       ]
     },
     "startedAt": {
-      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "Time at which previous execution of the container started"
     }
   },
