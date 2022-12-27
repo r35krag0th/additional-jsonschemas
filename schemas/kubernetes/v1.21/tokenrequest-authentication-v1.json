@@ -22,13 +22,13 @@
       ]
     },
     "metadata": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
     },
     "spec": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.api.authentication.v1.TokenRequestSpec"
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.authentication.v1.TokenRequestSpec"
     },
     "status": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.api.authentication.v1.TokenRequestStatus"
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.authentication.v1.TokenRequestStatus"
     }
   },
   "required": [

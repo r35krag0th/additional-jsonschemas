@@ -14,7 +14,7 @@
     "items": {
       "description": "List of MutatingWebhookConfiguration.",
       "items": {
-        "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.25.5/_definitions.json\"#/definitions/io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration"
+        "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration"
       },
       "type": [
         "array",
@@ -32,7 +32,7 @@
       ]
     },
     "metadata": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.25.5/_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
       "description": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
     }
   },

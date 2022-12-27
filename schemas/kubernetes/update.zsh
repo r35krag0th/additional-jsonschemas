@@ -50,10 +50,10 @@ prefix_for_major_minor() {
   # $1 = major.minor
   # $2 = directory
   if [ -z "${2}" ]; then
-    echo "https://jsonschema.r35.dev/kubernetes/${1}/_definitions.json"
+    echo "_definitions.json"
     return
   fi
-  echo "https://jsonschema.r35.dev/kubernetes/${1}/${2}/_definitions.json"
+  echo "_definitions.json"
 }
 
 render_standalone_strict() {

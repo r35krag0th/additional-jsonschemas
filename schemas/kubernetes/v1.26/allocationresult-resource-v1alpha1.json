@@ -2,7 +2,7 @@
   "description": "AllocationResult contains attributed of an allocated resource.",
   "properties": {
     "availableOnNodes": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.26.0/_definitions.json\"#/definitions/io.k8s.api.core.v1.NodeSelector",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.core.v1.NodeSelector",
       "description": "This field will get set by the resource driver after it has allocated the resource driver to inform the scheduler where it can schedule Pods using the ResourceClaim.\n\nSetting this field is optional. If null, the resource is available everywhere."
     },
     "resourceHandle": {

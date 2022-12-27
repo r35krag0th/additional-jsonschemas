@@ -12,7 +12,7 @@
     "conditions": {
       "description": "Conditions applied to the request, such as approval or denial.",
       "items": {
-        "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition"
+        "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition"
       },
       "type": [
         "array",

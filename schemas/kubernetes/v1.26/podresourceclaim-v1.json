@@ -9,7 +9,7 @@
       ]
     },
     "source": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.26.0/_definitions.json\"#/definitions/io.k8s.api.core.v1.ClaimSource",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.core.v1.ClaimSource",
       "description": "Source describes where to find the ResourceClaim."
     }
   },
