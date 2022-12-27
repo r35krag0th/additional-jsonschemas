@@ -17,7 +17,7 @@
       ]
     },
     "finishedAt": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "Time at which the container last terminated"
     },
     "message": {
@@ -43,7 +43,7 @@
       ]
     },
     "startedAt": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "Time at which previous execution of the container started"
     }
   },

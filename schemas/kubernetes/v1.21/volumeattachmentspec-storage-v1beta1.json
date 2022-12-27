@@ -16,7 +16,7 @@
       ]
     },
     "source": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.api.storage.v1beta1.VolumeAttachmentSource",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.storage.v1beta1.VolumeAttachmentSource",
       "description": "Source represents the volume that should be attached."
     }
   },

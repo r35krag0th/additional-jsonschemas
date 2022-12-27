@@ -23,7 +23,7 @@
       ]
     },
     "targetRef": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.core.v1.ObjectReference",
       "description": "Reference to object providing the endpoint."
     }
   },

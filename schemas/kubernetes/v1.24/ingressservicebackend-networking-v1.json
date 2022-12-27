@@ -9,7 +9,7 @@
       ]
     },
     "port": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.24.9/_definitions.json\"#/definitions/io.k8s.api.networking.v1.ServiceBackendPort",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.networking.v1.ServiceBackendPort",
       "description": "Port of the referenced service. A port name or port number is required for a IngressServiceBackend."
     }
   },

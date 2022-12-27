@@ -4,7 +4,7 @@
     "paths": {
       "description": "A collection of paths that map requests to backends.",
       "items": {
-        "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.21.14/_definitions.json\"#/definitions/io.k8s.api.extensions.v1beta1.HTTPIngressPath"
+        "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.extensions.v1beta1.HTTPIngressPath"
       },
       "type": [
         "array",

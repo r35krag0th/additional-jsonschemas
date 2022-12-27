@@ -16,7 +16,7 @@
       ]
     },
     "secretRef": {
-      "$ref": "\"https://jsonschema.r35.dev/kubernetes/v1.23.15/_definitions.json\"#/definitions/io.k8s.api.core.v1.SecretReference",
+      "$ref": "\"_definitions.json\"#/definitions/io.k8s.api.core.v1.SecretReference",
       "description": "Optional: points to a secret object containing parameters used to connect to OpenStack."
     },
     "volumeID": {
